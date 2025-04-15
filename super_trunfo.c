@@ -15,6 +15,9 @@ int main(){
     int turismo2;
     float area2, pib2, densidade2, pibPerCapita2, superpoder2;
     unsigned int populacao2;
+
+    //
+    int opcao;
     
     // cadastro da carta 1.
 
@@ -94,23 +97,116 @@ int main(){
     printf("SUPER PODER: %.3f\n", superpoder2);
 
     // Comparação das cartas
-    int rPop, rArea, rPIB, rTurismo, rDens, rPpc, rSP;
-    rPop = populacao1 > populacao2;
-    rArea = area1 > area2;
-    rPIB = pib1 > pib2;
-    rTurismo = turismo1 > turismo2;
-    rDens = densidade1 > densidade2;
-    rPpc = pibPerCapita1 > pibPerCapita2;
-    rSP = superpoder1 > superpoder2;
-    // Exibição da comparação das cartas
-    printf("\n=== Resultado ===\n");
-    printf("População: %d \n", rPop);
-    printf("Area: %d \n", rArea);
-    printf("P.I.B: %d \n", rPIB);
-    printf("Pontos turisticos: %d \n", rTurismo);
-    printf("Densidade populacional: %d \n", rDens);
-    printf("PIB per Capita: %d \n", rPpc);
-    printf("SUPER PODER: %d \n", rSP);
+    
+    printf("\n***Batalha***\n");
+    printf("Escolha uma das opções a seguir: \n");
+    printf("1. População\n");
+    printf("2. Area\n");
+    printf("3. P.I.B\n");
+    printf("4. Pontos turiscos\n");
+    printf("5. Densidade populacional\n");
+    printf("6. PIB per Capita\n");
+    printf("7. Super Poder\n");
+    scanf("%d", &opcao);
 
+    switch (opcao)
+    {
+    case 1:
+        printf("Populacao\n");
+        if (populacao1 == populacao2)
+        {
+            printf("Empate\n");
+        } else if (populacao1 > populacao2)
+        {
+            printf("%s tem mais populacao que %s\n", cidade1, cidade2);
+        } else
+        {
+            printf("%s tem mais populacao que %s\n", cidade2, cidade1);
+        }
+        break;
+        case 2:
+        printf("Area\n");
+        if (area1 == area2)
+        {
+            printf("Empate\n");
+        } else if (area1 > area2)
+        {
+            printf("%s tem mais area que %s\n", cidade1, cidade2);
+        } else
+        {
+            printf("%s tem mais area que %s\n", cidade2, cidade1);
+        }
+        break;
+        case 3:
+        printf("Pib\n");
+        if (pib1 == pib2)
+        {
+            printf("Empate\n");
+        } else if (pib1  > pib2)
+        {
+            printf("%s tem mais PIB que %s\n", cidade1, cidade2);
+        } else
+        {
+            printf("%s tem mais PIB que %s\n", cidade2, cidade1);
+        }
+        break;
+        case 4:
+        printf("Pontos turisticos\n");
+        if (turismo1 == turismo2)
+        {
+            printf("Empate\n");
+        } else if (turismo1  > turismo2)
+        {
+            printf("%s tem mais pontos turisticos que %s\n", cidade1, cidade2);
+        } else
+        {
+            printf("%s tem mais pontos turisticos que %s\n", cidade2, cidade1);
+        }
+        break;
+        case 5:
+        printf("Densidade populacional\n");
+        if (densidade1 == densidade1)
+        {
+            printf("Empate\n");
+        } else if (densidade1  > densidade2)
+        {
+            printf("%s tem mais densidade populacional que %s, por tanto %s venceu\n", cidade1, cidade2, cidade2);
+        } else
+        {
+            printf("%s tem mais densidade populacional que %s, por tanto %s venceu\n", cidade2, cidade1, cidade1);
+        }
+        break;
+        case 6:
+        printf("Pib per capita\n");
+        if (pibPerCapita1 == pibPerCapita2)
+        {
+            printf("Empate\n");
+        } else if (pibPerCapita1  > pibPerCapita2)
+        {
+            printf("%s tem o PIB per Capita maior que %s\n", cidade1, cidade2);
+        } else
+        {
+            printf("%s tem o PIB per Capita maior que %s\n", cidade2, cidade1);
+        }
+        break;
+        case 7:
+        printf("Super Poder\n");
+        if (superpoder1== superpoder2)
+        {
+            printf("Empate\n");
+        } else if (superpoder1  > superpoder2)
+        {
+            printf("%s tem o super poder maior que %s\n", cidade1, cidade2);
+        } else
+        {
+            printf("%s tem o super poder maior que %s\n", cidade2, cidade1);
+        }
+        break;
+    
+    default:
+    printf("opcao invalida\n");
+        break;
+    }
+    
     return 0;
 }
